@@ -11,6 +11,7 @@ Quickly add lint to your project dependency
 <details open>
   
 <summary>Groovy</summary>
+
 ```groovy
 lintChecks project(':mt-lint-ui')
 ```
@@ -19,6 +20,7 @@ lintChecks project(':mt-lint-ui')
 <details>
   
 <summary>Kotlin</summary>
+
 ```kotlin
 lintChecks(project(":mt-lint-ui"))
 ```
