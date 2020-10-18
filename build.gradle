@@ -13,6 +13,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Lint-Registry': 'com.modulotech.ui.UiLintRegistry'
+        attributes 'Lint-Registry': 'com.modulotech.ui.MtLintUiRegistry'
     }
 }
