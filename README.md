@@ -99,107 +99,18 @@ Choose the severity that you prefer and get started.
 ```
 </details>
 
------------
-
 ## Default configuration
-
-### XmlIdFormat-type
-Lint to check the prefix of xml ids. 
-Default Severity Error
- 
-#### Text Items 
-Issue Id -> `XmlIdFormat-Text`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| TextView | text_ | 
-| EditText | input_ | 
-
-#### Button Items
-Issue Id -> `XmlIdFormat-Button`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Button | btn_ | 
-| Chip | chip_ | 
-| ChipGroup | chip_group_ | 
-| CheckBox | check_ | 
-| RadioButton | radio_ | 
-| RadioGroup | radio_group_ | 
-| ToggleButton | toggle_ | 
-| Switch | switch_ | 
-
-#### Widget Items
-Issue Id -> `XmlIdFormat-Widget`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| View | view_, divider_ | 
-| ImageView | img_, icon_, image_ | 
-| WebView | web_ | 
-| VideoView | video_ | 
-| CalendarView | calendar_ | 
-| ProgressBar | progress_ | 
-| Seekbar | seek_ | 
-| RatingBar | rating_ | 
-| SearchView | search_ | 
-| TextureView | texture_ | 
-| SurfaceView | surface_ | 
-
-#### Container Items
-Issue Id -> `XmlIdFormat-Container`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Spinner | spinner_ | 
-| RecyclerView | recycler_, list_ | 
-| ScrollView | scroll_ | 
-| ViewPager | pager_ | 
-| CardView | card_ | 
-| Toolbar | toolbar_ | 
-| NavigationView | nav_ | 
-| BottomNavigationView | bot_nav_ | 
-| TabLayout | tab_ | 
-| TabItem | tab_item_ | 
-
-#### Helper Items
-Issue Id -> `XmlIdFormat-Helper`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Group | group_ | 
-| Barrier | barrier_ | 
-| Flow | flow_ | 
-| Guideline | guide_ | 
-| Layer | layer_ | 
-| MockView | mock_ | 
-
-#### Layout Items
-Issue Id -> `XmlIdFormat-Layout`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Space | space_ |
-
-#### Google Items
-Issue Id -> `XmlIdFormat-Google`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| MapView | map_ | 
-
-
-### XmlLegacyElement
-
-We don't support legacy items
-
-- ListView
-- GridView
-- TabHost
-- RelativeLayout
-- GridLayout
+Check our [Wiki](https://github.com/moduloTech/mt-lint-ui/wiki) to get more information on default configuration.
 
 --------
+## We are hiring!
+Modulotech is growing fast and we continue to expand our fully distributed team. We embrace diverse perspectives, and seek out passionate, self-motivated people, committed to our shared vision of raising the standard of trust online. If you are a software engineer capable in either iOS or Android, visit our [careers page](https://www.modulotech.fr/on-recrute/) to find out more about our openings!
+
+## Check out our Blogs!
+Modulotech has started our [blog on medium](https://medium.com/modulotech). Do catch us and follow for practical information on technical and non-technical topics. 
+
+## Terminology
+We have taken steps to update our terminology and remove words with problematic racial connotations, most notably the change to `main` branches, `allow lists`, and `blocklists`. Closed issues or PRs may contain deprecated terminology that should not be used going forward.
 
 ## License
 
