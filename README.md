@@ -57,6 +57,17 @@ For other lint options check - https://developer.android.com/reference/tools/gra
 
 ### Change severity 
 
+Instead of disabling lint checks, you can customise the severity and slowly migrate the project to stronger lint checks. 
+
+```
+Example:
+    lintOptions {
+        warning "XmlIdFormat-Widget", "XmlIdFormat-Container"
+        informational "XmlIdFormat-Text"
+    }
+```
+Choose the severity that you prefer and get started. 
+
 <details open>
   
 <summary>Groovy</summary>
@@ -92,17 +103,21 @@ For other lint options check - https://developer.android.com/reference/tools/gra
 
 ## Default configuration
 
-### XmlIdFormat
+### XmlIdFormat-type
 Lint to check the prefix of xml ids. 
 Default Severity Error
  
-#### Text Items
+#### Text Items 
+Issue Id -> `XmlIdFormat-Text`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | TextView | text_ | 
 | EditText | input_ | 
 
 #### Button Items
+Issue Id -> `XmlIdFormat-Button`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | Button | btn_ | 
@@ -115,6 +130,8 @@ Default Severity Error
 | Switch | switch_ | 
 
 #### Widget Items
+Issue Id -> `XmlIdFormat-Widget`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | View | view_, divider_ | 
@@ -130,6 +147,8 @@ Default Severity Error
 | SurfaceView | surface_ | 
 
 #### Container Items
+Issue Id -> `XmlIdFormat-Container`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | Spinner | spinner_ | 
@@ -144,6 +163,8 @@ Default Severity Error
 | TabItem | tab_item_ | 
 
 #### Helper Items
+Issue Id -> `XmlIdFormat-Helper`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | Group | group_ | 
@@ -154,11 +175,15 @@ Default Severity Error
 | MockView | mock_ | 
 
 #### Layout Items
+Issue Id -> `XmlIdFormat-Layout`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | Space | space_ |
 
 #### Google Items
+Issue Id -> `XmlIdFormat-Google`
+
 | Element | id prefix  | 
 | :---:   | :-: | 
 | MapView | map_ | 

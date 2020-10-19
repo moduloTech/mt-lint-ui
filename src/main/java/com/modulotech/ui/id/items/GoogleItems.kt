@@ -8,8 +8,11 @@ val googleItems: List<IdItem> by lazy {
     )
 }
 
+private const val ISSUE_ID_GOOGLE = "Google"
+
 // region Items
 private class MapView : IdItem(
+    issueIdSuffix = ISSUE_ID_GOOGLE,
     tagName = listOf("com.google.android.gms.maps.MapView"),
     idPrefix = listOf("map_")
 )

@@ -8,14 +8,17 @@ val textItems: List<IdItem> by lazy {
         EditView(),
     )
 }
+private const val ISSUE_ID_TEXT = "Text"
 
 // region Items
 private class TextView : IdItem(
+    issueIdSuffix = ISSUE_ID_TEXT,
     tagName = listOf("TextView", "androidx.appcompat.widget.AppCompatTextView"),
     idPrefix = listOf("text_")
 )
 
 private class EditView : IdItem(
+    issueIdSuffix = ISSUE_ID_TEXT,
     tagName = listOf(
         "EditText",
         "androidx.appcompat.widget.AppCompatEditText",

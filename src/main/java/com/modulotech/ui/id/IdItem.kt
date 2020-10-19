@@ -3,7 +3,7 @@ package com.modulotech.ui.id
 import com.android.tools.lint.detector.api.*
 import com.modulotech.ui.id.items.*
 
-private const val ID = "XmlIdFormat" // never change this, as it might affect prod
+const val ISSUE_ID_DEFAULT = "XmlIdFormat" // never change this, as it might affect prod
 private const val DESCRIPTION = "id should start with predefined prefix {prefix}"
 private const val EXPLANATION = "Use project naming conventions `@+id/{prefix}`"
 private const val PRIORITY = 7
@@ -13,7 +13,7 @@ private val SEVERITY = Severity.ERROR
 /**
  * Id items represents an open class to handle Xml Id prefix lint checks.
  */
-open class IdItem(val tagName: List<String>, val idPrefix: List<String>) {
+open class IdItem(val issueIdSuffix: String, val tagName: List<String>, val idPrefix: List<String>) {
 
     /**
      * Provides the [elementTag] from the [ResourceXmlDetector]'s [ResourceXmlDetector.visitElement]
@@ -31,7 +31,7 @@ open class IdItem(val tagName: List<String>, val idPrefix: List<String>) {
         /** Issue describing the problem and pointing to the detector implementation */
         return Issue.create(
             // ID: used in @SuppressLint warnings etc
-            ID,
+            "$ISSUE_ID_DEFAULT-$issueIdSuffix",
             // Title -- shown in the IDE's preference dialog, as category headers in the
             // Analysis results window, etc
             DESCRIPTION.replace("{prefix}", idPrefix.first().toString()),

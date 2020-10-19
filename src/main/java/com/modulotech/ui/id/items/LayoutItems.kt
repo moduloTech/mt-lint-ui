@@ -8,8 +8,11 @@ val layoutItems: List<IdItem> by lazy {
     )
 }
 
+private const val ISSUE_ID_LAYOUT = "Layout"
+
 // region Items
 private class Space : IdItem(
+    issueIdSuffix = ISSUE_ID_LAYOUT,
     tagName = listOf("Space"),
     idPrefix = listOf("space_")
 )
