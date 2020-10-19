@@ -3,17 +3,17 @@ Painless Gradle plugin for linting ui for Android xml.
 
 It aims to be easy to set up with zero required configuration and behaves as you'd expect out of the box.
 
-This project is in its alpha phase, many changes are expected to happen. 
-
 ## Installation 
-Quickly add lint to your project dependency
+Clone the repository and quickly add mt-lint-ui to your project dependency.
 
 <details open>
   
 <summary>Groovy</summary>
 
 ```groovy
-lintChecks project(':mt-lint-ui')
+dependencies {
+  lintChecks project(':mt-lint-ui')
+}
 ```
 </details>
 
@@ -22,14 +22,16 @@ lintChecks project(':mt-lint-ui')
 <summary>Kotlin</summary>
 
 ```kotlin
-lintChecks(project(":mt-lint-ui"))
+dependencies {
+  lintChecks(project(":mt-lint-ui"))
+}
 ```
 </details>
 
 ## Configuration
 If your project wants to strictly follow the rules ot mt-lint-ui lib, no configuration change is necessary. 
 Check the default configurations of the lint and their default severity. 
-For other lint options check - https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/LintOptions
+For other lint options check - [Android Lint Options](https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/LintOptions)
 
 ### Disable lint
 
@@ -38,9 +40,11 @@ For other lint options check - https://developer.android.com/reference/tools/gra
 <summary>Groovy</summary>
 
 ```groovy
+android {
   lintOptions {
         disable '$lintId1', `$lintId2`
     }
+}
 ```
 </details>
 
@@ -49,9 +53,11 @@ For other lint options check - https://developer.android.com/reference/tools/gra
 <summary>Kotlin</summary>
 
 ```kotlin
+android {
   lintOptions {
         disable("$lintId1", "$lintId2")
     }
+}
 ```
 </details>
 
@@ -61,10 +67,12 @@ Instead of disabling lint checks, you can customise the severity and slowly migr
 
 ```
 Example:
+android {
     lintOptions {
         warning "XmlIdFormat-Widget", "XmlIdFormat-Container"
         informational "XmlIdFormat-Text"
     }
+}
 ```
 Choose the severity that you prefer and get started. 
 
@@ -73,6 +81,7 @@ Choose the severity that you prefer and get started.
 <summary>Groovy</summary>
 
 ```groovy
+android {
   lintOptions {
         ignore "$lintId1", "$lintId2", "$lintId3" ....
     	warning "$lintId1", "$lintId2", "$lintId3" ....
@@ -80,6 +89,7 @@ Choose the severity that you prefer and get started.
     	fatal "$lintId1", "$lintId2", "$lintId3" ....
     	informational "$lintId1", "$lintId2", "$lintId3" ....
     }
+}
 ```
 </details>
 
@@ -88,6 +98,7 @@ Choose the severity that you prefer and get started.
 <summary>Kotlin</summary>
 
 ```kotlin
+android {
   lintOptions {
         ignore("$lintId1", "$lintId2")
         warning("$lintId1", "$lintId2")
@@ -96,110 +107,21 @@ Choose the severity that you prefer and get started.
         informational("$lintId1", "$lintId2")
 
     }
+}
 ```
 </details>
 
------------
-
 ## Default configuration
+Check our [Wiki](https://github.com/moduloTech/mt-lint-ui/wiki) to get more information on default configuration.
 
-### XmlIdFormat-type
-Lint to check the prefix of xml ids. 
-Default Severity Error
- 
-#### Text Items 
-Issue Id -> `XmlIdFormat-Text`
+## We are hiring!
+Modulotech is growing fast and we continue to expand our fully distributed team. We embrace diverse perspectives, and seek out passionate, self-motivated people, committed to our shared vision of raising the standard of trust online. If you are a software engineer capable in either iOS or Android, visit our [careers page](https://www.modulotech.fr/on-recrute/) to find out more about our openings!
 
-| Element | id prefix  | 
-| :---:   | :-: | 
-| TextView | text_ | 
-| EditText | input_ | 
+## Check out our Blogs!
+Modulotech has started our [blog on medium](https://medium.com/modulotech). Do catch us and follow for practical information on technical and non-technical topics. 
 
-#### Button Items
-Issue Id -> `XmlIdFormat-Button`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Button | btn_ | 
-| Chip | chip_ | 
-| ChipGroup | chip_group_ | 
-| CheckBox | check_ | 
-| RadioButton | radio_ | 
-| RadioGroup | radio_group_ | 
-| ToggleButton | toggle_ | 
-| Switch | switch_ | 
-
-#### Widget Items
-Issue Id -> `XmlIdFormat-Widget`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| View | view_, divider_ | 
-| ImageView | img_, icon_, image_ | 
-| WebView | web_ | 
-| VideoView | video_ | 
-| CalendarView | calendar_ | 
-| ProgressBar | progress_ | 
-| Seekbar | seek_ | 
-| RatingBar | rating_ | 
-| SearchView | search_ | 
-| TextureView | texture_ | 
-| SurfaceView | surface_ | 
-
-#### Container Items
-Issue Id -> `XmlIdFormat-Container`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Spinner | spinner_ | 
-| RecyclerView | recycler_, list_ | 
-| ScrollView | scroll_ | 
-| ViewPager | pager_ | 
-| CardView | card_ | 
-| Toolbar | toolbar_ | 
-| NavigationView | nav_ | 
-| BottomNavigationView | bot_nav_ | 
-| TabLayout | tab_ | 
-| TabItem | tab_item_ | 
-
-#### Helper Items
-Issue Id -> `XmlIdFormat-Helper`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Group | group_ | 
-| Barrier | barrier_ | 
-| Flow | flow_ | 
-| Guideline | guide_ | 
-| Layer | layer_ | 
-| MockView | mock_ | 
-
-#### Layout Items
-Issue Id -> `XmlIdFormat-Layout`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| Space | space_ |
-
-#### Google Items
-Issue Id -> `XmlIdFormat-Google`
-
-| Element | id prefix  | 
-| :---:   | :-: | 
-| MapView | map_ | 
-
-
-### XmlLegacyElement
-
-We don't support legacy items
-
-- ListView
-- GridView
-- TabHost
-- RelativeLayout
-- GridLayout
-
---------
+## Terminology
+We have taken steps to update our terminology and remove words with problematic racial connotations, most notably the change to `main` branches, `allow lists`, and `blocklists`. Closed issues or PRs may contain deprecated terminology that should not be used going forward.
 
 ## License
 
